@@ -1,0 +1,7 @@
+FROM node:alpine
+WORKDIR '/app'
+COPY ./package.json ./
+RUN npm install
+COPY . .
+# docker run -it -p 3000:3000 -itの指定がないと動かないことに注意
+CMD ["npm","run","dev"]
